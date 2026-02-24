@@ -18,6 +18,7 @@ java {
 
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     copyIdeResources = true
 
     runs {
@@ -82,6 +83,7 @@ tasks.named('jar', Jar).configure {
             "Implementation-Version"  : project.jar.archiveVersion,
             "Implementation-Vendor"   : mod_authors,
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "FMLAT"                   : "accesstransformer.cfg",
         ])
     }
     finalizedBy 'reobfJar'
