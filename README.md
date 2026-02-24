@@ -19,18 +19,18 @@ This means:
 
 - Heavier ordnance (bombs, missiles, nukes) tears through reinforced walls in a wide radius.
 - Lighter weapons (grenades, small charges) barely scratch the surface — or have no effect at all.
-- Even at ground zero, reinforced blocks still have a chance to survive, reflecting their toughened nature.
+- At ground zero, reinforced blocks are guaranteed to break — but falloff is sharp towards the edge of the radius.
 
 ### Damage scaling examples (default settings)
 
 | Weapon | Explosion radius | Effective radius | Effect |
 |---|---|---|---|
 | Pistol / small grenade | < 3 | — | **No effect** (below threshold) |
-| Tank AP shell | ~4 | ~1.4 blocks | Minor chip |
-| Tank HE shell | ~10 | ~3.5 blocks | Small breach |
-| GBU-57 bunker buster | 22 | ~7.7 blocks | Major breach |
-| AGM-158 cruise missile | 22 | ~7.7 blocks | Major breach |
-| Nuclear bomb (center) | 30 | ~10.5 blocks | Devastating |
+| Tank AP shell | ~4 | ~2.8 blocks | Moderate chip |
+| Tank HE shell | ~10 | ~7.0 blocks | Large breach |
+| GBU-57 bunker buster | 22 | ~15.4 blocks | Devastating |
+| AGM-158 cruise missile | 22 | ~15.4 blocks | Devastating |
+| Nuclear bomb (center) | 30 | ~21.0 blocks | Total annihilation |
 
 ## Compatibility
 
@@ -62,14 +62,14 @@ The config is **server-authoritative**: it lives on the server and is automatica
     # Explosions below this radius have zero effect.
     minExplosionPower = 3.0
 
-    # Resistance multiplier (default: 0.35)
+    # Resistance multiplier (default: 0.70)
     # effectiveRadius = explosion_radius × this_value
     # Lower = harder to destroy. 1.0 = same as normal blocks.
-    resistanceFactor = 0.35
+    resistanceFactor = 0.70
 
-    # Max destruction probability at ground zero (default: 0.65)
-    # Even at the epicenter, blocks aren't guaranteed to break.
-    maxDestroyChance = 0.65
+    # Max destruction probability at ground zero (default: 1.0)
+    # 1.0 = guaranteed destruction at the epicenter.
+    maxDestroyChance = 1.0
 ```
 
 ## For mod developers
@@ -98,6 +98,9 @@ cd SCWarfareBridge
 Output JAR will be in `build/libs/`.
 
 ## Changelog
+
+### 1.1.1
+- Doubled destruction power: `resistanceFactor` `0.35 → 0.70`, `maxDestroyChance` `0.65 → 1.0` (guaranteed at epicenter)
 
 ### 1.1.0
 - Config is now server-authoritative (`SERVER` type) — stored in `serverconfig/`, auto-synced to clients
