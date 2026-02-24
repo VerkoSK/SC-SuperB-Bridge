@@ -25,8 +25,9 @@ This means:
 
 | Weapon | Explosion radius | Effective radius | Effect |
 |---|---|---|---|
-| Grenade / pistol | < 8 | — | **No effect** (below threshold) |
-| Tank shell | ~10 | ~3.5 blocks | Small breach |
+| Pistol / small grenade | < 3 | — | **No effect** (below threshold) |
+| Tank AP shell | ~4 | ~1.4 blocks | Minor chip |
+| Tank HE shell | ~10 | ~3.5 blocks | Small breach |
 | GBU-57 bunker buster | 22 | ~7.7 blocks | Major breach |
 | AGM-158 cruise missile | 22 | ~7.7 blocks | Major breach |
 | Nuclear bomb (center) | 30 | ~10.5 blocks | Devastating |
@@ -48,13 +49,18 @@ This means:
 
 ## Configuration
 
-After first launch, edit `config/scwarfarebridge-common.toml`:
+The config is **server-authoritative**: it lives on the server and is automatically synced to all connecting clients. Clients cannot override it.
+
+| Environment | Config path |
+|---|---|
+| Dedicated server | `serverconfig/scwarfarebridge-server.toml` |
+| Singleplayer world | `saves/<world>/serverconfig/scwarfarebridge-server.toml` |
 
 ```toml
 [general]
-    # Minimum explosion radius to affect reinforced blocks (default: 8.0)
-    # Smaller explosions have zero effect — prevents pistols/grenades from chipping walls.
-    minExplosionPower = 8.0
+    # Minimum explosion radius to affect reinforced blocks (default: 3.0)
+    # Explosions below this radius have zero effect.
+    minExplosionPower = 3.0
 
     # Resistance multiplier (default: 0.35)
     # effectiveRadius = explosion_radius × this_value
@@ -90,6 +96,17 @@ cd SCWarfareBridge
 ```
 
 Output JAR will be in `build/libs/`.
+
+## Changelog
+
+### 1.1.0
+- Config is now server-authoritative (`SERVER` type) — stored in `serverconfig/`, auto-synced to clients
+- Added Forge built-in update checker (notifies in mod list when a new version is available)
+- Fixed AP shells having no effect: lowered `minExplosionPower` default from `8.0` to `3.0`
+- Added direct-hit handler for AP/APFSDS shells via `ProjectileHitEvent.HitBlock`
+
+### 1.0.0
+- Initial release — SecurityCraft + Superb Warfare compatibility bridge with dynamic damage scaling
 
 ## License
 
