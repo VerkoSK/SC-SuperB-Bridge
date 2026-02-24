@@ -9,12 +9,14 @@ Drop a single `.jar` into your `mods/` folder — no modified versions of Securi
 SecurityCraft reinforced blocks normally have `Float.MAX_VALUE` blast resistance, making them completely immune to all explosions. SC Warfare Bridge hooks into Forge's explosion event system and runs a secondary damage pass against nearby reinforced blocks based on the explosion's power.
 
 **Destruction formula:**
+
 ```
 effectiveRadius = explosion_radius × resistanceFactor
 chance_per_block = maxDestroyChance × (1 − distance / effectiveRadius)
 ```
 
 This means:
+
 - Heavier ordnance (bombs, missiles, nukes) tears through reinforced walls in a wide radius.
 - Lighter weapons (grenades, small charges) barely scratch the surface — or have no effect at all.
 - Even at ground zero, reinforced blocks still have a chance to survive, reflecting their toughened nature.
@@ -40,7 +42,7 @@ This means:
 ## Installation
 
 1. Install Minecraft Forge 1.20.1 (47.2.0+)
-2. Install SecurityCraft and Superb Warfare (or any military mod)
+2. Install SecurityCraft and Superb Warfare (or any addon mod)
 3. Drop `scwarfarebridge-x.x.x.jar` into your `mods/` folder
 4. Launch the game
 
@@ -82,7 +84,7 @@ boolean wasReinforced = SCWarfareBridgeAPI.tryBreakReinforced(serverLevel, block
 ## Building from source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SCWarfareBridge.git
+git clone https://github.com/VerkoSK/SCWarfareBridge.git
 cd SCWarfareBridge
 ./gradlew build
 ```
