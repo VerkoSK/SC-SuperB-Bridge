@@ -1,0 +1,11 @@
+{
+  "homepage": "https://github.com/VerkoSK/SCWarfareBridge",
+  "1.20.1": {
+    "1.0.0": "Initial release — SecurityCraft + Superb Warfare compatibility bridge with dynamic damage scaling",
+    "1.1.0": "Server-authoritative config (auto-synced to clients), built-in update checker"
+  },
+  "promos": {
+    "1.20.1-latest": "1.1.0",
+    "1.20.1-recommended": "1.1.0"
+  }
+}

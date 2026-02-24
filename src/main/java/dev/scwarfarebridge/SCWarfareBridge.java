@@ -16,7 +16,9 @@ public class SCWarfareBridge {
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     public SCWarfareBridge() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BridgeConfig.SPEC);
+        // SERVER type: stored in serverconfig/ on the server, auto-synced to all
+        // joining clients. Server values always override any local client defaults.
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, BridgeConfig.SPEC);
 
         // Always register the explosion hook (HE shells, missiles, nukes, ...)
         MinecraftForge.EVENT_BUS.register(ExplosionHandler.class);
