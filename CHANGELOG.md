@@ -5,6 +5,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.4] — 2026-02-25 — Hotfix
+
+### Fixed
+- Minor formatting and linter fixes across source files
+
+---
+
 ## [1.1.3] — 2026-02-25
 
 ### Changed
