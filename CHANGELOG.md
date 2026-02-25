@@ -8,7 +8,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.1.4] — 2026-02-25 — Hotfix
 
 ### Fixed
-- Minor formatting and linter fixes across source files
+- `mod_id` corrected from `sc-superb-bridge` to `sc_superb_bridge` (Forge does not allow hyphens in mod IDs)
+- Config file path corrected: `sc-superb-bridge-server.toml` → `sc_superb_bridge-server.toml`
 
 ---
 
@@ -17,8 +18,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - GitHub repository renamed from `SCWarfareBridge` to `SC-SuperB-Bridge`
-- `mod_id` changed from `scwarfarebridge` to `sc-superb-bridge`
-- Config file path changed: `scwarfarebridge-server.toml` → `sc-superb-bridge-server.toml`
+- `mod_id` changed from `scwarfarebridge` to `sc-superb-bridge` *(corrected to `sc_superb_bridge` in 1.1.4)*
+- Config file path changed: `scwarfarebridge-server.toml` → `sc_superb_bridge-server.toml`
 - All internal URLs updated to new repository name
 
 ---

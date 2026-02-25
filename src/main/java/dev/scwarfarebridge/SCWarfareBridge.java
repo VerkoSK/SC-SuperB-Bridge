@@ -12,7 +12,7 @@ import net.minecraftforge.fml.config.ModConfig;
 @Mod(SCWarfareBridge.MOD_ID)
 public class SCWarfareBridge {
 
-    public static final String MOD_ID = "sc-superb-bridge";
+    public static final String MOD_ID = "sc_superb_bridge";
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public SCWarfareBridge() {

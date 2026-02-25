@@ -44,7 +44,7 @@ This means:
 
 1. Install Minecraft Forge 1.20.1 (47.2.0+)
 2. Install SecurityCraft and Superb Warfare (or any addon mod)
-3. Drop `sc-superb-bridge-x.x.x.jar` into your `mods/` folder
+3. Drop `sc_superb_bridge-x.x.x.jar` into your `mods/` folder
 4. Launch the game
 
 ## Configuration
@@ -53,8 +53,8 @@ The config is **server-authoritative**: it lives on the server and is automatica
 
 | Environment | Config path |
 |---|---|
-| Dedicated server | `serverconfig/sc-superb-bridge-server.toml` |
-| Singleplayer world | `saves/<world>/serverconfig/sc-superb-bridge-server.toml` |
+| Dedicated server | `serverconfig/sc_superb_bridge-server.toml` |
+| Singleplayer world | `saves/<world>/serverconfig/sc_superb_bridge-server.toml` |
 
 ```toml
 [general]
